@@ -13,3 +13,7 @@
     height: calc(100% / 10);
     border: 2px solid black;
 }
+
+.clicked{
+    background-color: aqua;
+}
