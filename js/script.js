@@ -1,5 +1,6 @@
 const mainElement = document.querySelector('main');
 const squareContainer = document.querySelector('.grid');
+const playButtonElement = document.getElementById('playButton')
 
 function getSquare(elm, cls, prn, clicked){
     const newSquare = document.createElement(elm);
@@ -7,21 +8,26 @@ function getSquare(elm, cls, prn, clicked){
     prn.appendChild(newSquare);
     newSquare.addEventListener('click', function(){
         newSquare.classList.toggle(clicked)
+        console.log(parseInt(newSquare.innerText));
     });
     return newSquare;
+    
 }
-console.log(getSquare('div', 'test', mainElement));
+
+console.log(playButtonElement)
+
+playButtonElement.addEventListener('click', function(){
+
+    mainElement.classList.add('displayGrid', 'd-flex')
+
+    for (let i=1; i<=100; i++){
+        const createNewSquare = getSquare('div', 'square', squareContainer, 'clicked');
+        createNewSquare.classList.add('d-flex');
+        createNewSquare.innerHTML =`<span class="d-flex m-auto"> ${[i]} <span>`;
+    }
+});
 
 
-
-
-//!ADESSO DEVO GENERARE UN ADDEVENTLISTENER COLLEGATO AL PULSANTE HTML CHE COME PRIMA COSA MI FARA PARTIRE
-// ! LA FUNZIONE DI ASSEGNAZIONE DELLE CLASSI DISPLAYGRID E D-FLEX AL MAIN E POI IL FOR SOTTOSTANTE
-for (let i=1; i<=100; i++){
-    const createNewSquare = getSquare('div', 'square', squareContainer, 'clicked');
-    createNewSquare.classList.add('d-flex');
-    createNewSquare.innerHTML =`<span class="d-flex m-auto"> ${[i]} <span>`;
-}
 
 
 
