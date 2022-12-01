@@ -23,9 +23,9 @@ playButtonElement.addEventListener('click', function(){
     for (let i=1; i<=100; i++){
         const createNewSquare = getSquare('div', 'square', squareContainer, 'clicked');
         createNewSquare.classList.add('d-flex');
-        createNewSquare.innerHTML =`<span class="d-flex m-auto"> ${[i]} <span>`;
+        createNewSquare.innerHTML =`<span class="m-auto"> ${[i]} <span>`;
     }
-});
+}, {once: true});
 
 
 
