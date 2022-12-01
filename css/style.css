@@ -17,3 +17,7 @@
 .clicked{
     background-color: aqua;
 }
+
+#logo img{
+    width: 100px;
+}
