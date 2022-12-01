@@ -18,7 +18,7 @@ console.log(playButtonElement)
 
 playButtonElement.addEventListener('click', function(){
 
-    mainElement.classList.add('displayGrid', 'd-flex')
+    mainElement.classList.toggle('d-none');
 
     for (let i=1; i<=100; i++){
         const createNewSquare = getSquare('div', 'square', squareContainer, 'clicked');
